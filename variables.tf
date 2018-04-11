@@ -1,11 +1,11 @@
 variable "domain_name" {
   description = "Domain name for Elasticsearch cluster (will be prefixed with 'tf-')"
-  default     = "es-domain"
+  default     = "gsa-es-"
 }
 
 variable "es_version" {
-  description = "Version of Elasticsearch to deploy (default 5.1)"
-  default     = "5.1"
+  description = "Version of Elasticsearch to deploy (default 6.2)"
+  default     = "6.2"
 }
 
 variable "instance_type" {
@@ -41,8 +41,8 @@ variable "es_zone_awareness" {
 }
 
 variable "ebs_volume_size" {
-  description = "Optionally use EBS volumes for data storage by specifying volume size in GB (default 0)"
-  default     = 0
+  description = "EBS volumes for data storage by specifying volume size in GB (default 5)"
+  default     = 5
 }
 
 variable "ebs_volume_type" {
