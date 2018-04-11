@@ -42,7 +42,7 @@ variable "es_zone_awareness" {
 
 variable "ebs_volume_size" {
   description = "EBS volumes for data storage by specifying volume size in GB (default 5)"
-  default     = 5
+  default     = 10
 }
 
 variable "ebs_volume_type" {
