@@ -1,5 +1,4 @@
 # AWS ElasticSearch (VPC) via Terraform
-===========
 This repo uses Terraform Module to create a AWS ES within a VPC or creates a new VPC. 
 
 Terraform module for deploying and managing [Amazon Elasticsearch Service](https://aws.amazon.com/documentation/elasticsearch-service/).
@@ -98,7 +97,7 @@ License
 This software is released under the MIT License (see `LICENSE.md`).
 
 ### References
-
+[Simple Terraform Installer] (https://github.com/robertpeteuil/terraform-installer)
 https://www.jeremydaly.com/access-aws-vpc-based-elasticsearch-cluster-locally/
 
 [Steve Huff](https://github.com/hakamadare)
