@@ -40,14 +40,20 @@ resource "aws_elasticsearch_domain" "es" {
     zone_awareness_enabled   = "${var.es_zone_awareness}"
   }
 
-  # advanced_options {
-  # }
+  advanced_options {
+    "rest.action.multi.allow_explicit_index" = "true"
+  }
 
   ebs_options {
     ebs_enabled = "${var.ebs_volume_size > 0 ? true : false}"
     volume_size = "${var.ebs_volume_size}"
     volume_type = "${var.ebs_volume_type}"
   }
+  
+  encrypt_at_rest {
+    kms_key_id = "${var.kms_key_id}"
+  }
+
   snapshot_options {
     automated_snapshot_start_hour = "${var.snapshot_start_hour}"
   }
@@ -60,6 +66,7 @@ resource "aws_elasticsearch_domain_policy" "es_management_access" {
   count           = "${length(var.vpc_options["subnet_ids"]) > 0 ? 0 : 1}"
   domain_name     = "tf-${var.domain_name}"
   access_policies = "${data.aws_iam_policy_document.es_management_access.json}"
+  kibana_end      = kibana_endpoint 
 }
 
 # vim: set et fenc= ff=unix ft=terraform sts=2 sw=2 ts=2 : 
