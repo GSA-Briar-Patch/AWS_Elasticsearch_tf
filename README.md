@@ -94,7 +94,6 @@ Outputs
 License
 =======
 
-This software is released under the MIT License (see `LICENSE.md`).
 
 ### References
 [Simple Terraform Installer] (https://github.com/robertpeteuil/terraform-installer)
